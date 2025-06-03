@@ -1,12 +1,20 @@
 name: Manual
 on:
   workflow_dispatch:
+    # inputs:
+    #   greeting:
+    #     type: string
+    #     default: Hello
+    #     required: true
+    #     description: A cheerful word
     inputs:
       greeting:
-        type: string
-        default: Hello
-        required: true
-        description: A cheerful word
+        type: choice
+        options:
+          - hello
+          - bye
+          - byebye
+        description: choose a cheerful word.
 jobs:
   run:
     runs-on: ubuntu-latest
