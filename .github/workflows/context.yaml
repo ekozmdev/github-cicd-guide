@@ -9,4 +9,11 @@ jobs:
       - run: echo "${{ github.head_ref }}"
       - run: echo "${{ github.repository }}"
       - run: echo "${{ github.repository_owner }}"
-      - run: echo "${{ github.actor.event }}"
+      # - run: echo "${{ github.actor.event.pull_request.title }}"
+      - run: echo "${{ runner.name }}"
+      - run: echo "${{ runner.os }}"
+      - run: echo "${{ runner.arch }}"
+      - run: echo "${{ runner.temp }}"
+      - run: echo "${{ runner.tool_cache }}"
+      - run: echo "${{ runner.debug }}"
+
