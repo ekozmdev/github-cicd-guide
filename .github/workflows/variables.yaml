@@ -1,0 +1,9 @@
+name: Variables
+on: push
+jobs:
+  print-variables:
+    runs-on: ubuntu-latest
+    env:
+      USERNAME: ${{ vars.USERNAME }} # varsのコンテキストから取り出す
+    steps:
+      - run: echo "${USERNAME}" # 環境変数を経由して、コンテキストの値をクォートして文字として出力する
