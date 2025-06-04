@@ -4,8 +4,8 @@ jobs:
   print-contexts:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.actor }}"
-      - run: echo "${GITHUB_ACTOR}"
+      - run: echo "${{ github.actor }}" # jobの確認画面のstep一覧の時点で展開されているっぽい
+      - run: echo "${GITHUB_ACTOR}" # github.actorと同じ情報が入っているstep一覧の時点で展開されていない
       - run: echo "${{ github.run_id }}"
       - run: echo "${{ github.head_ref }}"
       - run: echo "${{ github.repository }}"
