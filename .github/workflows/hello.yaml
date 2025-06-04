@@ -1,9 +1,10 @@
-name: Hello
+# name: Hello
+name: Hi there
 # on: [push, workflow_dispatch]
 on: [push]
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - run: ls
+      - run: echo "Hello, world!"
       - uses: actions/checkout@v4
