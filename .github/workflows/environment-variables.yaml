@@ -6,7 +6,7 @@ jobs:
   print-1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${EXAMPLE}"
+      - run: echo "${EXAMPLE}" # 環境変数名の前後にスペースいらない
   print-2:
     runs-on: ubuntu-latest
     env:
