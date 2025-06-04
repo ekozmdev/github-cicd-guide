@@ -1,0 +1,9 @@
+name: Intermediate environment variables
+on: push
+jobs:
+  print-contexts:
+    runs-on: ubuntu-latest
+    env:
+      ACTOR: ${{ github.actor }} # コンテキストをjobレベルの環境変数にセットする
+    steps:
+      - run: echo "${ACTOR}" # 環境変数を経由して、コンテキストの値をクォートして文字として出力する
