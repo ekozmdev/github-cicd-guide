@@ -1,18 +1,22 @@
 name: Environment variables
 on: push
+env:
+  EXAMPLE: workflow # workflowレベルの環境変数
 jobs:
-  run-1:
+  print-1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${EXAMPLE}"
+  print-2:
     runs-on: ubuntu-latest
     env:
-      BRANCH: main # jobレベルの環境変数
+      EXAMPLE: job # jobレベルの環境変数
     steps:
-      - run: echo "${BRANCH}" # Linuxの環境変数の参照の仕方
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ env.BRANCH }} # Github Actionsのコンテクストの参照の仕方
-  run-2:
+      - run: echo "${EXAMPLE}"
+  print-3:
     runs-on: ubuntu-latest
-    env:
-      BRANCH: test # jobレベルの環境変数
     steps:
-      - run: echo "${BRANCH}" # Linuxの環境変数の参照の仕方
+      - run: echo "${EXAMPLE}"
+      - env:
+        EXAMPLE: step # jobレベルの環境変数
+      - run: echo "${EXAMPLE}"
