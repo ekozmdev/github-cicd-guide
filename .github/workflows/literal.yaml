@@ -11,5 +11,5 @@ jobs:
           LITERAL_NUMBER: ${{ 1234 }}
           LITERAL_STRING: ${{ 'Hello' }} # シングルクォートで囲む
           LITERAL_OMIT_STRING: Hello # 省略した文字列型
-          WRONG_LITERAL_STRING: ${{ "Hello" }}
+          # WRONG_LITERAL_STRING: ${{ "Hello" }}
           WRONG_LITERAL_OMIT_STRING: "Hello"
