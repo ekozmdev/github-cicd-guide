@@ -1,0 +1,14 @@
+name: Literals
+on: push
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - run: printenv | grep 'LITERAL_'
+      env:
+        LITERAL_NULL: ${{ null }}
+        LITERAL_BOOLEAN: ${{ true }}
+        LITERAL_NUMBER: ${{ 1234 }}
+        LITERAL_STRING: ${{ 'Hello' }} # シングルクォートで囲む
+        LITERAL_OMIT_STRING: Hello # 省略した文字列型
+        WRONG_LITERAL_STRING: ${{ "Hello" }}
+        WRONG_LITERAL_OMIT_STRING: "Hello"
