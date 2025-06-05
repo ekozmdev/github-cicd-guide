@@ -4,7 +4,6 @@ jobs:
   skip-or-run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello"
-        if: ${{ contains(github.run_id, '3') }} # ワークフロー実行IDに1が含まれていればこのstepが実行される
+      - run: echo "Hello" 
+        if: ${{ contains(github.run_id, '3') }} # ワークフロー実行IDに1が含まれていればこのstepが実行される, スキップされても結果にはstepの名前はでる
       - run: echo ${{ github.run_id }}
-      
