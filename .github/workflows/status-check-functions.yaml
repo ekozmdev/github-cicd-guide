@@ -4,6 +4,6 @@ jobs:
   fail:
     runs-on: ubuntu-latest
     steps:
-      - run: aaaa
-      - run: echo "Hello!"
+      - run: aaaa # 存在しないコマンド
+      - run: echo "Hello!"  # 1つ前がエラーなので実行されるstep
         if: ${{ failure() }}
