@@ -1,10 +1,10 @@
 name: Naming
+run-name: Run by ${{ github.actor }}
 on: push
 jobs:
-  print:
-    name: Super Useful jobs
+  print: # こっちはJobキー
+    name: Super Useful jobs # 表示名
     runs-on: ubuntu-latest
     steps:
       - name: Amazing Script
         run: echo "Amazing"
-        
